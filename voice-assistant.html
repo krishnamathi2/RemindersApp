@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Assistant | Reminders App</title>
+    
+    <!-- Embedded CSS with Font-Face -->
+    <style>
+        /* Font Awesome Definitions */
+        @font-face {
+            font-family: 'Font Awesome';
+            font-style: normal;
+            font-weight: 900;
+            font-display: block;
+            src: url('assets/webfonts/fa-solid-900.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Font Awesome Brands';
+            font-style: normal;
+            font-weight: 400;
+            font-display: block;
+            src: url('assets/webfonts/fa-brands-400.woff2') format('woff2');
+        }
+
+        /* Icon Base Styles */
+        .fa, .fas, .fa-solid {
+            font-family: 'Font Awesome';
+            font-weight: 900;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: var(--fa-display, inline-block);
+            font-style: normal;
+            font-variant: normal;
+            line-height: 1;
+            text-rendering: auto;
+        }
+        
+        /* Specific Icons */
+        .fa-microphone:before { content: "\f130"; }
+        .fa-trash:before { content: "\f1f8"; }
+        .fa-list:before { content: "\f03a"; }
+        .fa-inbox:before { content: "\f01c"; }
+
+        /* App Styles */
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin: 0;
+        }
+        .assistant-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .voice-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #0d6efd;
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="assistant-card">
+            <div class="assistant-header">
+                <h3><i class="fas fa-microphone me-2"></i>Voice Assistant</h3>
+            </div>
+            <div class="assistant-response" id="assistantResponse">
+                <div class="text-center py-4">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2">Initializing voice assistant...</p>
+                </div>
+            </div>
+            <button id="voiceBtn" class="voice-btn" aria-label="Voice control">
+                <i class="fas fa-microphone"></i>
+            </button>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header bg-white">
+                <h5 class="mb-0"><i class="fas fa-list me-2"></i>Your Reminders</h5>
+            </div>
+            <div class="card-body p-0">
+                <ul class="list-unstyled mb-0" id="remindersList">
+                    <li class="text-center py-4 text-muted">
+                        <i class="fas fa-inbox fa-2x mb-2"></i>
+                        <p>No reminders yet</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Local JavaScript -->
+    <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+/* Embedded Font Awesome font-face definitions */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url('../webfonts/fa-solid-900.woff2') format('woff2'),
+       url('../webfonts/fa-solid-900.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('../webfonts/fa-brands-400.woff2') format('woff2'),
+       url('../webfonts/fa-brands-400.ttf') format('truetype');
+}
+
+/* Core icon styles */
+.fa,
+.fas,
+.fa-solid {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+
+.fab,
+.fa-brands {
+  font-family: 'Font Awesome 6 Brands';
+  font-weight: 400;
+}
+
+/* Microphone icon definition */
+.fa-microphone:before {
+  content: "\f130";
+}
+
+/* Add other icon definitions as needed */
+.fa-trash:before {
+  content: "\f1f8";
+}
+
+.fa-list:before {
+  content: "\f03a";
+}
+
+/* Your custom styles */
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Removed empty ruleset as it had no styles */
